@@ -1,0 +1,15 @@
+# Build output
+bin/
+
+# Object files
+*.o
+*.obj
+
+# Executables
+*.exe
+
+# Debug symbols
+*.pdb
+
+# VS Code workspace settings
+.vscode/settings.json

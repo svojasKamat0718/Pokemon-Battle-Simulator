@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "process",
+			"label": "Build Project",
+			"command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${workspaceFolder}/src/main.cpp",
+				"${workspaceFolder}/src/Game.cpp",
+				"${workspaceFolder}/src/Menu.cpp",
+				"${workspaceFolder}/src/Battle.cpp",
+				"${workspaceFolder}/src/Pokemon.cpp",
+				"${workspaceFolder}/src/CombatMove.cpp",
+				"-o",
+				"${workspaceFolder}/bin/PokemonBattleSimulator.exe"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		}
+	]
+}
