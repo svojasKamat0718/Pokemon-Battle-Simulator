@@ -3,7 +3,7 @@
 class Menu{
 
     public:
-        int runMenu();
+        int run();
 
     private:
         void displayChoice();

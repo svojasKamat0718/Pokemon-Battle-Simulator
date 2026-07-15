@@ -3,5 +3,5 @@
 class Game{
 
     public:
-        void runGame();
+        void run();
 };

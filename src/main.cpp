@@ -1,11 +1,10 @@
 #include <iostream>
-#include <Game.h>
-
+#include "Game.h"
 
 int main(){
     
     Game game;
 
-    game.runGame();
+    game.run();
     return 0;
 }

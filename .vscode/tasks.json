@@ -14,6 +14,11 @@
 				"${workspaceFolder}/src/Battle.cpp",
 				"${workspaceFolder}/src/Pokemon.cpp",
 				"${workspaceFolder}/src/CombatMove.cpp",
+				"${workspaceFolder}/src/Utilities.cpp",
+				"${workspaceFolder}/data/PokemonData.cpp",
+				"${workspaceFolder}/data/MoveData.cpp",
+				"-I",
+				"${workspaceFolder}/include",
 				"-o",
 				"${workspaceFolder}/bin/PokemonBattleSimulator.exe"
 			],
