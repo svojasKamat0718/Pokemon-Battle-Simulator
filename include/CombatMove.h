@@ -1,7 +1,10 @@
 #pragma once
 #include <iostream>
 #include "Enums.h"
- 
+#include "Utilities.h"
+
+class Pokemon;
+
 class CombatMove {
     public:
     std::string name;
@@ -28,4 +31,6 @@ class CombatMove {
     }
 
     CombatMove() = default;
+
+    void displayMoves(Pokemon &pokemon);
 };
