@@ -8,4 +8,6 @@ class Game{
 
     private:
         Pokemon selectPokemon();
+        int getBotDifficulty();
+        void botDifficultyInfo();
 };

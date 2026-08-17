@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <algorithm>
 #include "CombatMove.h"
 
 class Pokemon {
@@ -14,6 +15,11 @@ class Pokemon {
         int defence{};
         int spAttack{};
         int spDefence{};
+
+        int attackStage{};
+        int defenceStage{};
+        int spAttackStage{};
+        int spDefenceStage{};
 
         Status status = NONE;
 

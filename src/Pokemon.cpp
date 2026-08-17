@@ -43,7 +43,7 @@ void Pokemon::displayPokemonInfo()
         std::cout << " " << i+1 << ". " << pokemonPool[choice - 1].moves[i].name << "\n"; 
     }
     std::cout << "\n\n";
-    printEqualSign();
+    printEqualSign(80);
     std::cout << "\n";
     
     std::cout << "Enter '0' to return\n";

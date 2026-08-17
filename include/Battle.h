@@ -24,5 +24,13 @@ class Battle{
         int calculateDamage();
         bool isFainted();
         bool battleOver();
-
+        CombatMove* getPlayerMove();
+        void displayHPBar(Pokemon *pokemon);
+        void displayBattle();
+        void executeMove(Pokemon *attacker, std::string attackerLabel, CombatMove *move, Pokemon *defender);
+        bool moveHits(std::string name, CombatMove *move);
+        int calculateNormalDamage(CombatMove *move);
+        int calculateSpecialDamage(CombatMove *move);
+        double stageMultiplier(int stage);
+        void applyEffect(Pokemon *attacker, CombatMove *move, Pokemon *defender);
 };

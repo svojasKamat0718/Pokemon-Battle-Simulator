@@ -9,7 +9,8 @@
 #include "Utilities.h"
 #include <windows.h>
 
-void Game::run(){
+void Game::run()
+{
 
     Menu menu;
     int choice;
@@ -43,7 +44,7 @@ void Game::run(){
             case 2:
                 Pokemon::displayPokemonInfo();
                 clearScreen();
-                continue;
+                break;
         
             case 3:
                 //Move Info...
@@ -56,6 +57,39 @@ void Game::run(){
                 return;
         }
     }while (choice != 1);
+
+    do{
+        choice = getBotDifficulty();
+        std::cout << "\n";
+
+        switch(choice){
+            case 0:
+                botDifficultyInfo();
+                choice = getValidatedInput(0, 0);
+                clearScreen();
+                break;
+            
+            case 1:
+                botPokemon.maxHP = 0.75 * botPokemon.maxHP;
+                botPokemon.currentHP = 0.75 * botPokemon.currentHP;
+                std::cout << " Difficulty was set to Easy\n";
+                break;
+
+            case 3:
+                botPokemon.maxHP = 1.5 * botPokemon.maxHP;
+                botPokemon.currentHP = 1.5 * botPokemon.currentHP;
+                std::cout << " Difficulty was set to Hard\n";
+                break;
+            
+            default:
+                std::cout << " Difficulty was set to Normal\n";
+                break;
+
+        }
+        Sleep(2000);
+        clearScreen();
+        }while(choice == 0);// I am using the same "choice" variable because user input will never overlap for 2 different tasks.
+                            // If that's a bad industry practice, I will modify it. Just say so.
 
     Battle battle(&playerPokemon, &botPokemon);
 
@@ -87,4 +121,47 @@ Pokemon Game::selectPokemon(){
                 return pokemonPool[choice - 1];
         }        
     }   
+}
+
+int Game::getBotDifficulty(){
+
+    screenTitle("Bot Difficulty Selection Menu");
+
+    std::cout << "\n Select bot difficulty\n\n";
+    std::cout << " 1. Easy\n";
+    std::cout << " 2. Normal\n";
+    std::cout << " 3. Hard\n\n";
+    std::cout << " 0. Difficulty modifier info\n";
+    std::cout << " ";
+    
+    return getValidatedInput(0, 3);
+}
+
+void Game::botDifficultyInfo(){
+
+    screenTitle("Difficulty Modifier Info Menu");
+    
+    std::cout << " Easy:\n";
+    std::cout << "   1. Opponent's HP will be decreased by 25%.\n";
+    std::cout << "   2. Chance of each move:\n";
+    std::cout << "          Best move     : 20%\n";
+    std::cout << "          2nd best move : 30%\n";
+    std::cout << "          3rd best move : 50%\n\n";
+    
+    std::cout << " Normal:\n";
+    std::cout << "   1. Opponent's HP will be same as shown in info menu.\n";
+    std::cout << "   2. Chance of each move:\n";
+    std::cout << "          Best move     : 50%\n";
+    std::cout << "          2nd best move : 30%\n";
+    std::cout << "          3rd best move : 20%\n\n";
+
+    std::cout << " Hard:\n";
+    std::cout << "   1. Opponent's HP will be increased by 50%.\n";
+    std::cout << "   2. Chance of each move:\n";
+    std::cout << "          Best move     : 80%\n";
+    std::cout << "          2nd best move : 15%\n";
+    std::cout << "          3rd best move : 05%\n\n";
+
+    std::cout << " Enter 0 to return.\n";
+    std::cout << " \n";
 }

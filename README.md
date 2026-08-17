@@ -21,4 +21,4 @@ A C++ project focused on building a scalable Pokémon battle simulator while lea
 - [ ] Type effectiveness
 - [ ] STAB
 - [ ] Critical hits
-- [ ] PP system
+- [x] PP system

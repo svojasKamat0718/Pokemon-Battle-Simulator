@@ -1,0 +1,23 @@
+Look at this battle flow and comment.
+
+check move PP
+check accuracy
+
+switch(move category)
+
+case Status move:
+{
+apply status
+battle message
+animate hp
+} 
+
+case physical move:
+{
+    calculate final damage
+    apply status
+    battle message
+    animate HP
+}
+
+

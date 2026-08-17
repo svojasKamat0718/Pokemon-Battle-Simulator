@@ -1,6 +1,9 @@
 #include <iostream>
 #include "Enums.h"
+#include <string>
 #include <random>
+#include <chrono>
+#include <thread>
 #include "Utilities.h"
 
 int getValidatedInput(int min, int max){
@@ -12,16 +15,16 @@ int getValidatedInput(int min, int max){
         
         if(!std::cin){
 
-            std::cout << "Invalid Input. Try again. \n\n";
+            std::cout << " Invalid Input. Try again. \n\n";
             std::cin.clear();
             std::cin.ignore(10000 , '\n');
-            std::cout << "Please enter number (" << min << "-" << max << "): ";
+            std::cout << " Please enter number (" << min << "-" << max << "): ";
             continue;
         }
         else if( num < min || num > max){
-            std::cout << "Invalid number. Try again.\n\n";
+            std::cout << " Invalid number. Try again.\n\n";
             std::cin.ignore(10000 , '\n');
-            std::cout << "Please enter number (" << min << "-" << max << "): ";
+            std::cout << " Please enter number (" << min << "-" << max << "): ";
             continue;
         }
         else{
@@ -37,9 +40,9 @@ int randomInt(int min, int max)
     return dist(rng);
 }
 
-void printEqualSign()
+void printEqualSign(int width)
 {
-    std::cout << std::string(50, '=') << "\n";
+    std::cout << std::string(width, '=') << "\n";
 }
 
 void printCentered(const std::string& text, int width)
@@ -72,14 +75,25 @@ std::string typeToString(Type type)
     }
 }
 
+std::string statusToString(Status status)
+{
+    switch(status)
+    {
+        case NONE     :  return "None";
+        case BURNED   :  return "Burned";
+        case POISONED :  return "Poisoned";
+        default       :  return "Unkown";
+    }
+}
+
 void screenTitle(std::string text)
 {
-    printEqualSign();
+    printEqualSign(80);
     std::cout << "\n";
-    printCentered(text, 50); //Length is hardcoded 50 because I have decided to be the standard length of at least pokemon v4.
+    printCentered(text, 80); //Length is hardcoded 50 because I have decided to be the standard length of at least pokemon v4.
     std::cout << "\n";
-    printEqualSign();
-}
+    printEqualSign(80);
+}\
 
 void clearScreen() 
 {
@@ -87,4 +101,13 @@ void clearScreen()
     // in the scrollback after a single ANSI clear sequence.
     std::cout << "\033[3J\033[2J\033[H" << std::flush;
     std::cout << "\033[3J\033[2J\033[H" << std::flush;
+}
+
+void animatedText(const std::string& text, int delay)
+{
+    for (char c : text)
+    {
+        std::cout << c << std::flush;
+        std::this_thread::sleep_for(std::chrono::milliseconds(delay));
+    }
 }
