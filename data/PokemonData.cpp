@@ -6,7 +6,7 @@
 Pokemon pikachu(
     "Pikachu",
     ELECTRIC,
-    200,
+    600,
     55, 40, 50, 50,
     NONE,
     thunderBolt,
@@ -18,7 +18,7 @@ Pokemon pikachu(
 Pokemon charizard(
     "Charizard",
     FIRE,
-    300,
+    700,
     84, 78, 109, 85,
     NONE,
     flameThrower,
@@ -30,7 +30,7 @@ Pokemon charizard(
 Pokemon blastoise(
     "Blastoise",
     WATER,
-    320,
+    720,
     83, 100, 85, 105,
     NONE,
     hydroPump,
@@ -42,7 +42,7 @@ Pokemon blastoise(
 Pokemon venusaur(
     "Venusaur",
     GRASS,
-    320,
+    720,
     82, 83, 100, 100,
     NONE,
     solarBeam,
@@ -54,7 +54,7 @@ Pokemon venusaur(
 Pokemon golem(
     "Golem",
     ROCK,
-    350,
+    750,
     120, 130, 55, 65,
     NONE,
     earthquake,
@@ -66,7 +66,7 @@ Pokemon golem(
 Pokemon alakazam(
     "Alakazam",
     PSYCHIC,
-    250,
+    650,
     50, 45, 135, 95,
     NONE,
     psychic,
@@ -78,7 +78,7 @@ Pokemon alakazam(
 Pokemon machamp(
     "Machamp",
     FIGHTING,
-    340,
+    740,
     130, 80, 65, 85,
     NONE,
     dynamicPunch,
@@ -90,7 +90,7 @@ Pokemon machamp(
 Pokemon gengar(
     "Gengar",
     GHOST,
-    270,
+    670,
     65, 60, 130, 75,
     NONE,
     shadowBall,
@@ -102,7 +102,7 @@ Pokemon gengar(
 Pokemon dragonite(
     "Dragonite",
     DRAGON,
-    360,
+    760,
     134, 95, 100, 100,
     NONE,
     dragonClaw,
@@ -114,7 +114,7 @@ Pokemon dragonite(
 Pokemon lapras(
     "Lapras",
     WATER,
-    380,
+    780,
     85, 80, 85, 95,
     NONE,
     surf,
