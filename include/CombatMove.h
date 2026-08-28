@@ -16,6 +16,8 @@ class CombatMove {
         MoveCategory category;
         MoveEffect effect;
         int effectChance;
+
+        float moveScore;
         
         CombatMove(std::string name, Type type , int power , int accuracy , int PP, MoveCategory category, MoveEffect effect, int effectChance){
             

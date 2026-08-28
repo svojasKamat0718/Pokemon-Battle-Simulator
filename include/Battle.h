@@ -29,7 +29,6 @@ class Battle{
         void displayBattle();
         void executeMove(Pokemon *attacker, std::string attackerLabel, CombatMove *move, Pokemon *defender);
         bool moveHits(std::string name, CombatMove *move);
-        double stageMultiplier(int stage);
         void applyEffect(Pokemon *attacker, CombatMove *move, Pokemon *defender);
         double getSTAB_Multiplier(Pokemon *attacker , CombatMove *move);
         double getTypeMultiplier(CombatMove *move , Type defenderType);

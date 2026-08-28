@@ -16,6 +16,7 @@
 				"${workspaceFolder}/src/Pokemon.cpp",
 				"${workspaceFolder}/src/CombatMove.cpp",
 				"${workspaceFolder}/src/Utilities.cpp",
+				"${workspaceFolder}/src/AI.cpp",
 				"${workspaceFolder}/data/PokemonData.cpp",
 				"${workspaceFolder}/data/MoveData.cpp",
 				"-I",

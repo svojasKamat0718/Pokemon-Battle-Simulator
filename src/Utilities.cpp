@@ -111,3 +111,14 @@ void animatedText(const std::string& text, int delay)
         std::this_thread::sleep_for(std::chrono::milliseconds(delay));
     }
 }
+
+double stageMultiplier(int stage)
+{
+    if (stage >= 0)
+    {
+        return (2.0 + stage) / 2.0;
+    }
+
+    return 2.0 / (2.0 - stage);
+}
+

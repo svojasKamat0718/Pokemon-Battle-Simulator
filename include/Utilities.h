@@ -23,3 +23,5 @@ void screenTitle(std::string text);
 void clearScreen();
 
 void animatedText(const std::string& text, int delay = 25);
+
+double stageMultiplier(int stage);

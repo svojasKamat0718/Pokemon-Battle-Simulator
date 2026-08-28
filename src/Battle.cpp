@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <cmath>
 #include "Battle.h"
+#include "AI.h"
 #include "Pokemon.h"
 #include "Utilities.h"
 double damageRoll();
@@ -43,6 +44,23 @@ void Battle::playerTurn(){
 
 void Battle::botTurn(){
     
+    CombatMove availableMoves[4];
+    int moveCount{};
+    for (int i = 0; i < 4; i++){
+
+        if(!hasPP(botPokemon->moves, i)){
+            continue;
+        }
+        
+        availableMoves[moveCount] = botPokemon->moves[i];
+        moveCount++;
+    }
+
+    clearScreen();
+    Sleep(1000);
+    
+    evaluateMove(availableMoves, moveCount, playerPokemon, botPokemon);
+    Sleep(10000);
     return;
 }
 
@@ -194,16 +212,6 @@ bool Battle::moveHits(std::string name, CombatMove *move){
     }
 
     return true;
-}
-
-double Battle::stageMultiplier(int stage)
-{
-    if (stage >= 0)
-    {
-        return (2.0 + stage) / 2.0;
-    }
-
-    return 2.0 / (2.0 - stage);
 }
 
 void Battle::applyEffect(Pokemon *attacker, CombatMove *move, Pokemon *defender){

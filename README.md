@@ -8,6 +8,7 @@ A C++ project focused on building a scalable Pokémon battle simulator while lea
 
 - Multi-file project organization
 - Object-oriented programming
+- Simple move evaluating AI
 - Scalable architecture
 - Git & GitHub workflow
 - Clean code
@@ -17,8 +18,11 @@ A C++ project focused on building a scalable Pokémon battle simulator while lea
 - [x] Project structure
 - [x] Menu framework
 - [ ] Battle engine
-- [ ] Damage calculation
-- [ ] Type effectiveness
-- [ ] STAB
-- [ ] Critical hits
 - [x] PP system
+- [x] Damage calculation
+- [x] Type effectiveness
+- [x] STAB
+- [x] Critical hits
+- [ ] Ai
+- [ ] Status damage
+- [ ] HP animation

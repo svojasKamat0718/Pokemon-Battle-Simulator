@@ -1,23 +1,7 @@
-Look at this battle flow and comment.
+Accuracy range score deduction.
 
-check move PP
-check accuracy
-
-switch(move category)
-
-case Status move:
-{
-apply status
-battle message
-animate hp
-} 
-
-case physical move:
-{
-    calculate final damage
-    apply status
-    battle message
-    animate HP
-}
-
-
+range 100-91 -= 05 points
+range 90-81  -= 10 points
+range 80-71  -= 15 points
+range 70-60  -= 20 points
+range 60>    -= 30 points
