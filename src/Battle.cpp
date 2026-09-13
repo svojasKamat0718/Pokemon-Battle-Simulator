@@ -23,6 +23,9 @@ void Battle::run(){
             std::cout << "Bot Wins!\n";
             return;
         }
+
+        applyStatusDamage(playerPokemon);
+        applyStatusDamage(botPokemon);
     }
 
 }
@@ -146,6 +149,7 @@ void Battle::displayBattle(){
 
 void Battle::executeMove(Pokemon *attacker, std::string attackerLabel, CombatMove *move, Pokemon *defender){
 
+    int attackerOldHP = attacker->currentHP;
     int defenderOldHP = defender->currentHP;
 
     screenTitle("Battle");
@@ -184,6 +188,8 @@ void Battle::executeMove(Pokemon *attacker, std::string attackerLabel, CombatMov
 
             displayTypeMessage(getTypeMultiplier(move, defender->type), defender);
 
+            applyEffect(attacker, move, defender);
+            
             defender->currentHP -= damage;
 
             animatedText(" " + defender->name + " took " + std::to_string(damage) + " damage!\n", 25);
@@ -192,6 +198,7 @@ void Battle::executeMove(Pokemon *attacker, std::string attackerLabel, CombatMov
             clearScreen();
 
             animateHP(defender, defenderOldHP);
+            animateHP(attacker, attackerOldHP);
             break;
             }  
     }
@@ -220,7 +227,7 @@ void Battle::applyEffect(Pokemon *attacker, CombatMove *move, Pokemon *defender)
     {
         case BURN_EFFECT:
             if (defender->status != NONE){
-                animatedText(" but it failed!\n", 25);
+                animatedText(" " + defender->name + " is already " + statusToString(defender->status) + "\n", 25);
                 return;
             }
         
@@ -234,7 +241,7 @@ void Battle::applyEffect(Pokemon *attacker, CombatMove *move, Pokemon *defender)
         case POISON_EFFECT:
             
             if (defender->status != NONE){
-                animatedText(" but it failed!\n", 25);
+                animatedText(" " + defender->name + " is already " + statusToString(defender->status) + "\n", 25);
                 return;
             }
 
@@ -574,4 +581,41 @@ void Battle::animateHP(Pokemon* pokemon, double oldHP){
         Sleep(500);
         clearScreen();
     }
+}
+
+void Battle::applyStatusDamage(Pokemon *pokemon)
+{   
+    int oldHp = pokemon->currentHP;
+
+    if (pokemon->status == NONE)
+    {
+        return;
+    }
+
+    pokemon->currentHP -= pokemon->maxHP/8;
+
+    if (pokemon->currentHP < 0)
+    {
+        pokemon->currentHP = 0;
+    }
+
+    if (pokemon->status == BURNED)
+    {
+        clearScreen();
+        animatedText(" " + pokemon->name + " was hurt by it's burn!\n", 25);
+        Sleep(2000);
+        clearScreen();
+        animateHP(pokemon, oldHp);
+        Sleep(2000);
+        clearScreen();
+        return;
+    }
+
+    clearScreen();
+    animatedText(" " + pokemon->name + " was hurt by it's poison!\n", 25);
+    Sleep(2000);
+    clearScreen();
+    animateHP(pokemon, oldHp);
+    Sleep(2000);
+    clearScreen();
 }

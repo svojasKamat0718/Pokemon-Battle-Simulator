@@ -1,7 +1,0 @@
-Accuracy range score deduction.
-
-range 100-91 -= 05 points
-range 90-81  -= 10 points
-range 80-71  -= 15 points
-range 70-60  -= 20 points
-range 60>    -= 30 points

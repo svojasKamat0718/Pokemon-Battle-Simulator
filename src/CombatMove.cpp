@@ -4,14 +4,6 @@
 #include "Utilities.h"
 #include <windows.h>
 
-/*void CombatMove::displayMoves(Pokemon &pokemon)
-{
-    for (int i = 0; i < 4; i++)
-    {
-        std::cout << " " << i+1 << ". " << pokemon.moves[i].name << "\n";
-    }
-}*/
-
 bool CombatMove::checkPP(CombatMove *move){
 
     if (move->PP == 0){

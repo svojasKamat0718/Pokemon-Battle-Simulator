@@ -21,12 +21,14 @@ int getValidatedInput(int min, int max){
             std::cout << " Please enter number (" << min << "-" << max << "): ";
             continue;
         }
+        
         else if( num < min || num > max){
             std::cout << " Invalid number. Try again.\n\n";
             std::cin.ignore(10000 , '\n');
             std::cout << " Please enter number (" << min << "-" << max << "): ";
             continue;
         }
+        
         else{
             std::cin.ignore(10000 , '\n');
             return num;

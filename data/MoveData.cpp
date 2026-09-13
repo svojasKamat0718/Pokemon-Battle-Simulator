@@ -7,7 +7,7 @@ CombatMove quickAttack("Quick Attack", NORMAL, 40, 100, 30, PHYSICAL, NO_EFFECT,
 CombatMove ironTail("Iron Tail", STEEL, 100, 75, 15, PHYSICAL, DEFENCE_DOWN, 30);
 CombatMove thunder("Thunder", ELECTRIC, 110, 70, 10, SPECIAL, NO_EFFECT, 0);
 
-CombatMove flameThrower("Flame Thrower", FIRE, 90, 100, 15, SPECIAL, BURN_EFFECT, 10);
+CombatMove flameThrower("Flame Thrower", FIRE, 90, 100, 15, SPECIAL, BURN_EFFECT, 100);//Changed effect  chance to 100 to check status damage
 CombatMove fireBlast("Fire Blast", FIRE, 110, 85, 5, SPECIAL, BURN_EFFECT, 10);
 CombatMove airSlash("Air Slash", FLYING, 75, 95, 15, SPECIAL, NO_EFFECT, 0);
 CombatMove dragonClaw("Dragon Claw", DRAGON, 80, 100, 15, PHYSICAL, NO_EFFECT, 0);
@@ -56,7 +56,7 @@ CombatMove calmMind("Calm Mind", PSYCHIC, 0, 100, 20, STATUS, SP_ATTACK_UP, 100)
 
 CombatMove ironDefense("Iron Defense", STEEL, 0, 100, 15, STATUS, DEFENCE_UP, 100);
 
-CombatMove screech("Screech", NORMAL, 0, 85, 20, STATUS, DEFENCE_DOWN, 100);
+CombatMove screech("Screech", NORMAL, 0, 100, 20, STATUS, DEFENCE_DOWN, 100);
 
 CombatMove nastyPlot("Nasty Plot", DARK, 0, 100, 20, STATUS, SP_ATTACK_UP, 100);
 

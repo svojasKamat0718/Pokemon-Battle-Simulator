@@ -18,6 +18,9 @@ class Battle{
         }
         Battle() = default;
 
+        static double getSTAB_Multiplier(Pokemon *attacker , CombatMove *move);
+        static double getTypeMultiplier(CombatMove *move , Type defenderType);
+
     private:
         void playerTurn();
         void botTurn();
@@ -30,9 +33,8 @@ class Battle{
         void executeMove(Pokemon *attacker, std::string attackerLabel, CombatMove *move, Pokemon *defender);
         bool moveHits(std::string name, CombatMove *move);
         void applyEffect(Pokemon *attacker, CombatMove *move, Pokemon *defender);
-        double getSTAB_Multiplier(Pokemon *attacker , CombatMove *move);
-        double getTypeMultiplier(CombatMove *move , Type defenderType);
         void displayTypeMessage(double multiplier , Pokemon *pokemon);
         double getCriticalHit();
         void animateHP(Pokemon* pokemon, double oldHP);
+        void applyStatusDamage(Pokemon *pokemon);
 };
