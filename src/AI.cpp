@@ -214,3 +214,18 @@ int evaluateMove(CombatMove Moves[], int moveCount, Pokemon *player, Pokemon *bo
     
     return 0;
 }
+
+CombatMove *getBotMove(CombatMove availableMoves[], int moveCount)
+{
+    int bestMoveIndex = 0;
+
+    for (int i = 1; i < moveCount; i++)
+    {
+        if (availableMoves[i].moveScore > availableMoves[bestMoveIndex].moveScore)
+        {
+            bestMoveIndex = i;
+        }
+    }
+
+    return &availableMoves[bestMoveIndex];
+}

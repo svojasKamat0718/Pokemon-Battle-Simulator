@@ -7,8 +7,8 @@ CombatMove quickAttack("Quick Attack", NORMAL, 40, 100, 30, PHYSICAL, NO_EFFECT,
 CombatMove ironTail("Iron Tail", STEEL, 100, 75, 15, PHYSICAL, DEFENCE_DOWN, 30);
 CombatMove thunder("Thunder", ELECTRIC, 110, 70, 10, SPECIAL, NO_EFFECT, 0);
 
-CombatMove flameThrower("Flame Thrower", FIRE, 90, 100, 15, SPECIAL, BURN_EFFECT, 100);//Changed effect  chance to 100 to check status damage
-CombatMove fireBlast("Fire Blast", FIRE, 110, 85, 5, SPECIAL, BURN_EFFECT, 10);
+CombatMove flameThrower("Flame Thrower", FIRE, 90, 100, 15, SPECIAL, BURN_EFFECT, 30);
+CombatMove fireBlast("Fire Blast", FIRE, 110, 85, 5, SPECIAL, BURN_EFFECT, 30);
 CombatMove airSlash("Air Slash", FLYING, 75, 95, 15, SPECIAL, NO_EFFECT, 0);
 CombatMove dragonClaw("Dragon Claw", DRAGON, 80, 100, 15, PHYSICAL, NO_EFFECT, 0);
 
@@ -26,13 +26,13 @@ CombatMove rockSlide("Rock Slide", ROCK, 75, 90, 10, PHYSICAL, NO_EFFECT, 0);
 CombatMove stoneEdge("Stone Edge", ROCK, 100, 80, 5, PHYSICAL, NO_EFFECT, 0);
 CombatMove explosion("Explosion", NORMAL, 150, 100, 5, PHYSICAL, NO_EFFECT, 0);
 
-CombatMove psychic("Psychic", PSYCHIC, 90, 100, 10, SPECIAL, SP_DEFENCE_DOWN, 10);
+CombatMove psychic("Psychic", PSYCHIC, 90, 100, 10, SPECIAL, SP_DEFENCE_DOWN, 30);
 CombatMove psyBeam("PsyBeam", PSYCHIC, 65, 100, 20, SPECIAL, NO_EFFECT, 0);
 CombatMove shadowBall("Shadow Ball", GHOST, 80, 100, 15, SPECIAL, SP_DEFENCE_DOWN, 20);
 CombatMove futureSight("Future Sight", PSYCHIC, 120, 100, 10, SPECIAL, NO_EFFECT, 0);
 
 CombatMove dynamicPunch("Dynamic Punch", FIGHTING, 100, 50, 5, PHYSICAL, NO_EFFECT, 0);
-CombatMove closeCombat("Close Combat", FIGHTING, 120, 100, 5, PHYSICAL, DEFENCE_DOWN, 100);
+CombatMove closeCombat("Close Combat", FIGHTING, 120, 100, 5, PHYSICAL, DEFENCE_DOWN, 70);
 CombatMove karateChop("Karate Chop", FIGHTING, 50, 100, 25, PHYSICAL, NO_EFFECT, 0);
 CombatMove crossChop("Cross Chop", FIGHTING, 100, 80, 5, PHYSICAL, NO_EFFECT, 0);
 

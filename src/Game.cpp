@@ -45,14 +45,8 @@ void Game::run()
                 Pokemon::displayPokemonInfo();
                 clearScreen();
                 break;
-        
-            case 3:
-                //Move Info...
-                // I am skipping this for now.
-                //I'll complete this feature later.
-                break;
 
-            case 4:
+            case 3:
                 std::cout << "Thank you for playing!\n";
                 return;
         }
@@ -64,6 +58,7 @@ void Game::run()
 
         switch(choice){
             case 0:
+                clearScreen();
                 botDifficultyInfo();
                 choice = getValidatedInput(0, 0);
                 clearScreen();
@@ -115,6 +110,8 @@ Pokemon Game::selectPokemon(){
                 clearScreen();
                 Pokemon::displayPokemonInfo();
                 clearScreen();
+                screenTitle("Pokemon Selection Menu");
+                std::cout << "\n Choose your pokemon!\n\n";
                 break;
 
             default:
@@ -141,26 +138,11 @@ void Game::botDifficultyInfo(){
 
     screenTitle("Difficulty Modifier Info Menu");
     
-    std::cout << " Easy:\n";
-    std::cout << "   1. Opponent's HP will be decreased by 25%.\n";
-    std::cout << "   2. Chance of each move:\n";
-    std::cout << "          Best move     : 20%\n";
-    std::cout << "          2nd best move : 30%\n";
-    std::cout << "          3rd best move : 50%\n\n";
+    std::cout << " Easy: Opponent's HP will be decreased by 25%.\n\n";
     
-    std::cout << " Normal:\n";
-    std::cout << "   1. Opponent's HP will be same as shown in info menu.\n";
-    std::cout << "   2. Chance of each move:\n";
-    std::cout << "          Best move     : 50%\n";
-    std::cout << "          2nd best move : 30%\n";
-    std::cout << "          3rd best move : 20%\n\n";
-
-    std::cout << " Hard:\n";
-    std::cout << "   1. Opponent's HP will be increased by 50%.\n";
-    std::cout << "   2. Chance of each move:\n";
-    std::cout << "          Best move     : 80%\n";
-    std::cout << "          2nd best move : 15%\n";
-    std::cout << "          3rd best move : 05%\n\n";
+    std::cout << " Normal: Opponent's HP will be same as shown in info menu.\n\n";
+    
+    std::cout << " Hard: Opponent's HP will be increased by 50%.\n\n";
 
     std::cout << " Enter 0 to return.\n";
     std::cout << " \n";

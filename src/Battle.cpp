@@ -13,14 +13,11 @@ void Battle::run(){
     while(true){
         playerTurn();
         if(battleOver()){
-            std::cout << "Player Wins!\n";
             return;
-            //This is temporary win message. I will change it once I get everything working.
         }
 
         botTurn();
         if(battleOver()){
-            std::cout << "Bot Wins!\n";
             return;
         }
 
@@ -63,12 +60,31 @@ void Battle::botTurn(){
     Sleep(1000);
     
     evaluateMove(availableMoves, moveCount, playerPokemon, botPokemon);
-    Sleep(10000);
+
+    CombatMove *botmove = getBotMove(availableMoves, moveCount);
+
+    executeMove(botPokemon, "Opponent", botmove, playerPokemon);
     return;
 }
 
 bool Battle::battleOver(){
     
+    if(playerPokemon->currentHP <= 0)
+    {
+        clearScreen();
+        animatedText("You lost!\n\n", 25);
+        animatedText("Thank you for playing!", 25);
+        Sleep(2000);
+        return true;
+    }
+    else if(botPokemon->currentHP <= 0)
+    {
+        clearScreen();
+        animatedText("You defeated " + botPokemon->name + "\n\n", 25);
+        animatedText("Thank you for playing!", 25);
+        Sleep(2000);
+        return true;
+    }
     return false;
 }
 
@@ -202,8 +218,6 @@ void Battle::executeMove(Pokemon *attacker, std::string attackerLabel, CombatMov
             break;
             }  
     }
-
-    Sleep(3000);
     clearScreen();
 }
 
@@ -218,6 +232,7 @@ bool Battle::moveHits(std::string name, CombatMove *move){
         return false;
     }
 
+    Sleep(1000);
     return true;
 }
 
@@ -572,6 +587,11 @@ void Battle::animateHP(Pokemon* pokemon, double oldHP){
 
     double finalHP = pokemon->currentHP;
     pokemon->currentHP = oldHP;
+
+    if (finalHP < 0)
+    {
+        finalHP = 0;
+    }
 
     while(pokemon->currentHP > finalHP){
         pokemon->currentHP -= 20;

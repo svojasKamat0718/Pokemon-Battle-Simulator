@@ -1,7 +1,6 @@
 #include <iostream>
 #include "Pokemon.h"
 #include "PokemonData.h"
-//#include "MoveData.h"
 #include "Utilities.h"
 
 void Pokemon::displayPokemon()
