@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
-#include <CombatMove.h>
+#include <algorithm>
+#include "CombatMove.h"
 
 class Pokemon {
     public:
@@ -14,6 +15,11 @@ class Pokemon {
         int defence{};
         int spAttack{};
         int spDefence{};
+
+        int attackStage{};
+        int defenceStage{};
+        int spAttackStage{};
+        int spDefenceStage{};
 
         Status status = NONE;
 
@@ -33,11 +39,16 @@ class Pokemon {
         this->defence = defence;
         this->spAttack = spAttack;
         this->spDefence = spDefence;
+        this->status = status;
         moves[0] = m1;
         moves[1] = m2;
         moves[2] = m3;
         moves[3] = m4;
     }
 
-    Pokemon() = default;
+        Pokemon() = default;
+        
+        static void displayPokemon();
+        static void displayPokemonInfo();
 };
+

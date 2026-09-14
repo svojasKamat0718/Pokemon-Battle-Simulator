@@ -1,59 +1,57 @@
 #pragma once
 
-#include "CombatMove.h"
-
 extern CombatMove thunderBolt;
+extern CombatMove quickAttack;
+extern CombatMove ironTail;
 extern CombatMove thunder;
-extern CombatMove thunderPunch;
 
 extern CombatMove flameThrower;
 extern CombatMove fireBlast;
-extern CombatMove willOWisp;
+extern CombatMove airSlash;
+extern CombatMove dragonClaw;
 
 extern CombatMove hydroPump;
 extern CombatMove surf;
+extern CombatMove iceBeam;
+extern CombatMove bite;
 
 extern CombatMove solarBeam;
 extern CombatMove razorLeaf;
-extern CombatMove growth;
-
-extern CombatMove iceBeam;
-extern CombatMove blizzard;
+extern CombatMove sludgeBomb;
+extern CombatMove earthquake;
 
 extern CombatMove rockSlide;
 extern CombatMove stoneEdge;
-
-extern CombatMove earthquake;
-
-extern CombatMove dragonClaw;
-extern CombatMove dragonRush;
-extern CombatMove dragonDance;
-
-extern CombatMove airSlash;
-extern CombatMove hurricane;
-
-extern CombatMove sludgeBomb;
-extern CombatMove toxic;
-
-extern CombatMove ironTail;
+extern CombatMove explosion;
 
 extern CombatMove psychic;
 extern CombatMove psyBeam;
-extern CombatMove futureSight;
-extern CombatMove calmMind;
-extern CombatMove dreamEater;
-
 extern CombatMove shadowBall;
-
-extern CombatMove bite;
-extern CombatMove darkPulse;
+extern CombatMove futureSight;
 
 extern CombatMove dynamicPunch;
 extern CombatMove closeCombat;
 extern CombatMove karateChop;
 extern CombatMove crossChop;
-extern CombatMove bulkUp;
 
-extern CombatMove quickAttack;
+extern CombatMove darkPulse;
+extern CombatMove dreamEater;
+
+extern CombatMove dragonRush;
+extern CombatMove hurricane;
+extern CombatMove thunderPunch;
+
+extern CombatMove blizzard;
 extern CombatMove bodySlam;
-extern CombatMove explosion;
+
+// V4 Status Moves
+extern CombatMove bulkUp;
+extern CombatMove calmMind;
+extern CombatMove ironDefense;
+extern CombatMove screech;
+extern CombatMove nastyPlot;
+extern CombatMove howl;
+
+extern const CombatMove movePool[40];
+    
+extern const int movePoolSize;

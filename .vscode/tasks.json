@@ -8,6 +8,7 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
+				"-std=c++17",
 				"${workspaceFolder}/src/main.cpp",
 				"${workspaceFolder}/src/Game.cpp",
 				"${workspaceFolder}/src/Menu.cpp",
@@ -15,6 +16,7 @@
 				"${workspaceFolder}/src/Pokemon.cpp",
 				"${workspaceFolder}/src/CombatMove.cpp",
 				"${workspaceFolder}/src/Utilities.cpp",
+				"${workspaceFolder}/src/AI.cpp",
 				"${workspaceFolder}/data/PokemonData.cpp",
 				"${workspaceFolder}/data/MoveData.cpp",
 				"-I",
